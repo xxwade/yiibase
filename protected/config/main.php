@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'yii基础搭建，便于重用',
 
-	// 'defaultController'=>'user',
+	'defaultController'=>'home',
 
 	// preloading 'log' component
 	'preload'=>array(

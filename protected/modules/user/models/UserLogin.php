@@ -34,9 +34,9 @@ class UserLogin extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'rememberMe'=>UserModule::t("Remember me next time"),
-			'username'=>UserModule::t("username or email"),
-			'password'=>UserModule::t("password"),
+			'rememberMe'=>UserModule::t("记住我"),
+			'username'=>UserModule::t("用户名或邮箱"),
+			'password'=>UserModule::t("密码"),
 		);
 	}
 
@@ -57,19 +57,19 @@ class UserLogin extends CFormModel
 					Yii::app()->user->login($identity,$duration);
 					break;
 				case UserIdentity::ERROR_EMAIL_INVALID:
-					$this->addError("username",UserModule::t("Email is incorrect."));
+					$this->addError("username",UserModule::t("邮箱错误"));
 					break;
 				case UserIdentity::ERROR_USERNAME_INVALID:
-					$this->addError("username",UserModule::t("Username is incorrect."));
+					$this->addError("username",UserModule::t("用户名错误"));
 					break;
 				case UserIdentity::ERROR_STATUS_NOTACTIV:
-					$this->addError("status",UserModule::t("You account is not activated."));
+					$this->addError("status",UserModule::t("账户未被激活"));
 					break;
 				case UserIdentity::ERROR_STATUS_BAN:
-					$this->addError("status",UserModule::t("You account is blocked."));
+					$this->addError("status",UserModule::t("账户被封"));
 					break;
 				case UserIdentity::ERROR_PASSWORD_INVALID:
-					$this->addError("password",UserModule::t("Password is incorrect."));
+					$this->addError("password",UserModule::t("密码错误"));
 					break;
 			}
 		}

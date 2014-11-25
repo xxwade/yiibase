@@ -2,6 +2,7 @@
 
 class LoginController extends Controller
 {
+	public $layout = '//layouts/blank';
 	public $defaultAction = 'login';
 
 	/**
@@ -10,7 +11,7 @@ class LoginController extends Controller
 	public function actionLogin()
 	{
 		if (Yii::app()->user->isGuest) {
-			$model=new UserLogin;
+			$model=new  UserLogin;
 			// collect user input data
 			if(isset($_POST['UserLogin']))
 			{

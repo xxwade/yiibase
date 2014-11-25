@@ -6,6 +6,7 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
+	'language'=>'zh_cn',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'yii基础搭建，便于重用',
 
@@ -165,7 +166,7 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					'levels'=>'trace, info,error, warning',
 				),
 				// uncomment the following to show log messages on web pages
 				/*

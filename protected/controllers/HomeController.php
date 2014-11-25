@@ -1,8 +1,8 @@
 <?php
-
 class HomeController extends Controller
 {
 	public $layout='//layouts/blank';
+	public $defaultAction = 'index';
 	/**
 	 * Declares class-based actions.
 	 */
@@ -14,10 +14,18 @@ class HomeController extends Controller
 				'class'=>'CCaptchaAction',
 				'backColor'=>0xFFFFFF,
 			),
-			// page action renders "static" pages stored under 'protected/views/site/pages'
-			// They can be accessed via: index.php?r=site/page&view=FileName
 			'page'=>array(
 				'class'=>'CViewAction',
+			),
+		);
+	}
+
+	public function accessRules()
+	{
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index'),
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -28,9 +36,9 @@ class HomeController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
 	}
 
 }
+
+?>
